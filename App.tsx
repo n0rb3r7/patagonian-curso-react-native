@@ -12,7 +12,7 @@ import React from 'react';
 import { Alert, Button, StyleSheet, Text, Image, View } from 'react-native';
 import DefaultButton from './src/components/DefaultButton';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
-import { colors } from './src/utils/theme';
+import colors from './src/utils/theme';
 
 const showAlert = () => {
   Alert.alert('Hola!');
