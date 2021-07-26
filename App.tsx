@@ -9,25 +9,35 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, Image, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, Image, View } from 'react-native';
+import DefaultButton from './src/components/DefaultButton';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
-console.log(DEVICE_HEIGHT);
-console.log(DEVICE_WIDTH);
+import { colors } from './src/utils/theme';
+
+const showAlert = () => {
+  Alert.alert('Hola!');
+  console.log('Device height -> ', DEVICE_HEIGHT);
+  console.log('Device width -> ', DEVICE_WIDTH);
+};
+
 const App = () => {
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.text}>vierne' sushi</Text>
+      <Text>subtitulo</Text>
       <Image
         style={styles.imagen}
         source={{ uri: 'https://www.pequerecetas.com/wp-content/uploads/2018/02/sushi-casero.jpg' }}
       />
+      <Button title="Hola" onPress={showAlert} />
+      <DefaultButton onPress={showAlert} text="Boton" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: 'pink',
+    backgroundColor: colors.veryPinky,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
 export const colors = {
-  veryPinky: '#ab2354',
+  veryPinky: '#f54269',
+  mainOrange: '#686e34',
 };
