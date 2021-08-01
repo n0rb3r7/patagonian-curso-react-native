@@ -23,8 +23,8 @@ const showAlert = () => {
 const App = () => {
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.text}>vierne' sushi</Text>
-      <Text>subtitulo</Text>
+      <Text style={styles.text}>Norbert APP</Text>
+      <Text>subtitulo 1</Text>
       <Image
         style={styles.imagen}
         source={{ uri: 'https://www.pequerecetas.com/wp-content/uploads/2018/02/sushi-casero.jpg' }}
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   text: {
-    color: '#56fe',
+    color: 'white',
     fontSize: 30,
   },
   imagen: {
