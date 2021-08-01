@@ -8,29 +8,54 @@
  * @format
  */
 
-import React from 'react';
-import { Alert, Button, StyleSheet, Text, Image, View } from 'react-native';
+import React, { useState } from 'react';
+import { Modal, StyleSheet, Text, Image, View } from 'react-native';
 import DefaultButton from './src/components/DefaultButton';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from './src/utils/dimensions';
 import colors from './src/utils/theme';
 
-const showAlert = () => {
-  Alert.alert('Hola!');
-  console.log('Device height -> ', DEVICE_HEIGHT);
-  console.log('Device width -> ', DEVICE_WIDTH);
-};
+// const showAlert = () => {
+//   Alert.alert('Hola!');
+//   console.log('Device height -> ', DEVICE_HEIGHT);
+//   console.log('Device width -> ', DEVICE_WIDTH);
+// };
 
 const App = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const showModal = () => {
+    setModalVisible(true);
+  };
+  const hideModal = () => {
+    setModalVisible(false);
+  };
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.text}>vierne' sushi</Text>
+      <Text style={styles.text}>vierne' sushiii</Text>
       <Text>subtitulo</Text>
       <Image
         style={styles.imagen}
         source={{ uri: 'https://www.pequerecetas.com/wp-content/uploads/2018/02/sushi-casero.jpg' }}
       />
-      <Button title="Hola" onPress={showAlert} />
-      <DefaultButton onPress={showAlert} text="Boton" />
+      <DefaultButton onPress={showModal} text="Boton" />
+      <Modal animationType="fade" visible={isModalVisible} transparent>
+        <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+          <View
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: colors.blueish,
+              borderRadius: 17,
+              width: '65%',
+              height: 100,
+            }}
+          >
+            <Text>Holas!</Text>
+            <DefaultButton onPress={hideModal} text="ok" />
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
