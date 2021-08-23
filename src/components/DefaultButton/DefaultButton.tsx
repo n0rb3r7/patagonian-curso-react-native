@@ -1,27 +1,45 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import colors from '../../utils/theme';
+import { TouchableOpacity, ViewStyle } from 'react-native';
 
+import Typography from '../Typography';
+
+import styles, { buttonTextColors } from './styles';
+import colors from '../../utils/theme';
 interface Props {
+  additionalStyle?: ViewStyle;
   onPress: () => void;
   text: string;
+  textSize?: number;
+  variant?: 'primary' | 'secondary' | 'tertiary';
 }
-export const DefaultButton = ({ onPress, text }: Props) => {
+
+const DefaultButton = ({
+  additionalStyle,
+  onPress,
+  text,
+  textSize,
+  variant = 'primary',
+}: Props) => {
   return (
     <TouchableOpacity
+      style={[styles.mainContainer, styles[variant], additionalStyle]}
       onPress={onPress}
-      // eslint-disable-next-line react-native/no-inline-styles
-      style={{
-        marginVertical: 10,
-        backgroundColor: colors.veryPinky,
-        borderRadius: 10,
-        width: 150,
-        height: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
     >
-      <Text>{text}</Text>
+      <Typography
+        color={buttonTextColors[variant] || colors.black}
+        size={textSize}
+        variant="medium"
+      >
+        {text}
+      </Typography>
     </TouchableOpacity>
   );
 };
+
+DefaultButton.defaultProps = {
+  additionalStyle: {},
+  textSize: 18,
+  variant: 'primary',
+};
+
+export default DefaultButton;

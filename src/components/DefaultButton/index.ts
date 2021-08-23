@@ -1,2 +1,2 @@
-import { DefaultButton } from './DefaultButton';
+import DefaultButton from './DefaultButton';
 export default DefaultButton;
