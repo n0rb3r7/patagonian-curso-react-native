@@ -1,10 +1,13 @@
 import React from 'react';
+
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import { RouteProp } from '@react-navigation/core';
 
 const { createBottomTabNavigator } = require('@react-navigation/bottom-tabs');
 
-import { HistoryScreen, HomeScreen } from '../screens';
+import { HistoryScreen } from '../screens';
+import HomeStack from './HomeStack';
+
 import colors from '../utils/theme';
 
 type Route = RouteProp<Record<string, object | undefined>, string>;
@@ -38,12 +41,13 @@ const navigatorScreenOptions = ({ route }: { route: Route }) => ({
   tabBarLabelStyle: {
     fontSize: 12,
   },
+  headerShown: false,
 });
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={navigatorScreenOptions}>
-      <Tab.Screen name="HomeTab" component={HomeScreen} options={{ title: 'Home' }} />
+      <Tab.Screen name="HomeTab" component={HomeStack} options={{ title: 'Home' }} />
       <Tab.Screen name="HistoryTab" component={HistoryScreen} options={{ title: 'History' }} />
     </Tab.Navigator>
   );

@@ -10,15 +10,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   image: {
-    aspectRatio: 1,
-    minHeight: 50,
-    width: DEVICE_WIDTH * 0.3,
+    aspectRatio: 0.8,
+    minHeight: 150,
+    width: DEVICE_WIDTH * 0.8,
   },
   mainContainer: {
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
-    paddingBottom: 30,
+    //paddingBottom: 30,
     width: '100%',
   },
   safeArea: {

@@ -6,8 +6,8 @@ import styles from './styles';
 
 import colors from '../../utils/theme';
 
-const arr = Array.from({ length: 3 }, (_, index) => index);
-// arr = [0, 1, 2, 3, 4, 5]
+//const arr = Array.from({ length: 3 }, (_, index) => index);
+const arr = [0, 1, 2, 3, 4, 5];
 
 const ExperimentalScreen = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -46,7 +46,7 @@ const ExperimentalScreen = () => {
                 <Image
                   resizeMode="contain"
                   source={{
-                    uri: 'https://cdn.dribbble.com/users/361323/screenshots/4180125/crypto-currently-template.png?compress=1&resize=400x300',
+                    uri: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/30fa2843-b981-4e76-9050-4fc9e886377d/daadbyt-8648c6e2-d67f-4163-93ea-1fbf9ce65cdf.png/v1/fill/w_1280,h_1639,q_80,strp/tulp_by_n0rb3rt_daadbyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYzOSIsInBhdGgiOiJcL2ZcLzMwZmEyODQzLWI5ODEtNGU3Ni05MDUwLTRmYzllODg2Mzc3ZFwvZGFhZGJ5dC04NjQ4YzZlMi1kNjdmLTQxNjMtOTNlYS0xZmJmOWNlNjVjZGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.s1vUvW9WEbKcWBqY3VgGxQvh24lox0t3XYG94ThUs-M',
                   }}
                   style={styles.image}
                 />
@@ -64,7 +64,9 @@ const ExperimentalScreen = () => {
               <Separator isHorizontal size={10} />
               <Image
                 resizeMode="contain"
-                source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+                source={{
+                  uri: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/30fa2843-b981-4e76-9050-4fc9e886377d/daadbyt-8648c6e2-d67f-4163-93ea-1fbf9ce65cdf.png/v1/fill/w_1280,h_1639,q_80,strp/tulp_by_n0rb3rt_daadbyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYzOSIsInBhdGgiOiJcL2ZcLzMwZmEyODQzLWI5ODEtNGU3Ni05MDUwLTRmYzllODg2Mzc3ZFwvZGFhZGJ5dC04NjQ4YzZlMi1kNjdmLTQxNjMtOTNlYS0xZmJmOWNlNjVjZGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.s1vUvW9WEbKcWBqY3VgGxQvh24lox0t3XYG94ThUs-M',
+                }}
                 style={styles.image}
               />
             </View>
@@ -79,6 +81,7 @@ const ExperimentalScreen = () => {
               visible={isModalVisible}
             />
           </View>
+          <Separator size={10} />
         </ScrollView>
       </ImageBackground>
     </>
