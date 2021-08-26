@@ -30,7 +30,7 @@ const getIconName = (routeName: string) => {
 };
 const navigatorScreenOptions = ({ route }: { route: Route }) => ({
   tabBarIcon: ({ focused, color, size }: { focused: boolean; color: string; size: number }) => {
-    console.log('///Route name ///', route.name);
+    //console.log('///Route name ///', route.name);
     const iconName = getIconName(route.name);
     const iconSize = focused ? size * 1.2 : size;
     return <MaterialIcon name={iconName} size={iconSize} color={color} />;
