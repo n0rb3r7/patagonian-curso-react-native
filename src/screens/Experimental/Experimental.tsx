@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, SafeAreaView, ScrollView, View } from 'react-native';
 
 import { AlertModal, DefaultButton, Separator, Typography } from '../../components';
@@ -11,6 +11,11 @@ const arr = [0, 1, 2, 3, 4, 5];
 
 const ExperimentalScreen = () => {
   const [isModalVisible, setModalVisible] = useState(false);
+
+  useEffect(() => {
+    console.log('Inside useEffect');
+  }, []);
+  console.log('Inside ExperimentalScreen');
 
   const showModal = () => {
     setModalVisible(true);
