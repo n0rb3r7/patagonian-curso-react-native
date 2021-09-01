@@ -61,7 +61,7 @@ const HomeScreen = () => {
       <>
         <Header showBackButton={false} title="Home Screen" />
         <View style={styles.wholeScreenCenter}>
-          <ActivityIndicator size="large" color={colors.mainOrange} />
+          <ActivityIndicator size="large" color={colors.black} />
         </View>
       </>
     );
@@ -69,10 +69,14 @@ const HomeScreen = () => {
 
   return (
     <>
-      <Header showBackButton={false} title="Home Screen" />
+      <Header showBackButton={true} title="Home Screen" />
       <View style={styles.mainContainer}>
         <Separator size={20} />
-        <DefaultButton text="Go To Experimental Screen" onPress={goToExperimentalScreen} />
+        <DefaultButton
+          text="Go To Experimental Screen"
+          onPress={goToExperimentalScreen}
+          variant={'tertiary'}
+        />
         <Separator size={20} />
         <FlatList
           refreshing={loading}
